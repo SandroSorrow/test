@@ -1,0 +1,147 @@
+<knights>
+
+<id id="1" email="varka@monstadt.tw" password="Varka1knight" rank="1">
+    <name>Varka</name>
+    <sex>Male</sex>
+    <birthday>Unknown</birthday>
+    <post>Grand Master</post>
+    <vision>Unknown</vision>
+    <weapon>Unknown</weapon>
+    <description>Knight of Boreas</description>
+    <namepic>none</namepic>
+</id>
+
+<id id="2" email="jean@monstadt.tw" password="vanessa314" rank="1">
+    <name surname="Gunnhildr">Jean</name>
+    <sex>Female</sex>
+    <birthday>March 14th</birthday>
+    <post>Acting Grand Master</post>
+    <vision>Anemo</vision>
+    <weapon>Sword</weapon>
+    <description>Dandelion Knight</description>
+    <namepic>Jean.png</namepic>
+</id>
+
+<id id="3" email="kaeya@monstadt.tw" password="kaeyap1rat" rank="1">
+    <name surname="Alberich">Kaeya</name>
+    <sex>Male</sex>
+    <birthday>November 30th</birthday>
+    <post>Cavalry Captain</post>
+    <vision>Cryo</vision>
+    <weapon>Sword</weapon>
+    <description>Quartermaster</description>
+    <namepic>Kaeya.png</namepic>
+</id>
+
+<id id="4" email="eula@monstadt.tw" password="NOTlawrence" rank="1">
+    <name surname="Lawrence">Eula</name>
+    <sex>Female</sex>
+    <birthday>October 25th</birthday>
+    <post>Captain of the Reconnaissance Company</post>
+    <vision>Cryo</vision>
+    <weapon>Claymore</weapon>
+    <description>Spindrift Knight</description>
+    <namepic>Eula.png</namepic>
+</id>
+
+<id id="5" email="albedo@monstadt.tw" password="chalkm0untain" rank="1">
+    <name>Albedo</name>
+    <sex>Male</sex>
+    <birthday>September 13th</birthday>
+    <post>Captain of the Investigation Team</post>
+    <vision>Geo</vision>
+    <weapon>Sword</weapon>
+    <description>Chief Alchemist. The Chalk Prince</description>
+    <namepic>Albedo.png</namepic>
+</id>
+
+<id id="6" email="amber@monstadt.tw" password="BaronBunny" rank="1">
+    <name>Amber</name>
+    <sex>Female</sex>
+    <birthday>August 10th</birthday>
+    <post>Outrider</post>
+    <vision>Pyro</vision>
+    <weapon>Bow</weapon>
+    <description>Glading Champion of Monstadt</description>
+    <namepic>Amber.png</namepic>
+</id>
+
+<id id="7" email="lisa@monstadt.tw" password="lisalibra" rank="1">
+    <name surname="Minci">Lisa</name>
+    <sex>Female</sex>
+    <birthday>June 9th</birthday>
+    <post>Chief Librarian</post>
+    <vision>Electro</vision>
+    <weapon>Catalyst</weapon>
+    <description>Sumeru Academia's most distinguished graduate in 200 years</description>
+    <namepic>Lisa.png</namepic>
+</id>
+
+<id id="8" email="sucrose@monstadt.tw" password="sucrose6308" rank="1">
+    <name>Sucrose</name>
+    <sex>Female</sex>
+    <birthday>November 26th</birthday>
+    <post>Alchemist</post>
+    <vision>Anemo</vision>
+    <weapon>Catalyst</weapon>
+    <description>Albedo's Assistant</description>
+    <namepic>Sucrose.png</namepic>
+</id>
+
+<id id="9" email="noelle@monstadt.tw" password="goodmaid" rank="1">
+    <name>Noelle</name>
+    <sex>Female</sex>
+    <birthday>March 21th</birthday>
+    <post>Maid and Apprentice Knight</post>
+    <vision>Geo</vision>
+    <weapon>Claymore</weapon>
+    <description>Wish to be a Knight</description>
+    <namepic>Noelle.png</namepic></id>
+
+<id id="10" email="klee@monstadt.tw" password="DodokoBestFriend" rank="1">
+    <name>Klee</name>
+    <sex>Female</sex>
+    <birthday>July 27th</birthday>
+    <post>Spark Knight</post>
+    <vision>Pyro</vision>
+    <weapon>Catalyst</weapon>
+    <description>Alice's daughter, Dodoko's Keeper</description>
+    <namepic>Klee.png</namepic></id>
+
+
+<id id="11" email="lumine@monstadt.tw" password="EtherMissU" rank="1">
+    <name>Lumine</name>
+    <sex>Female</sex>
+    <birthday>September 7th</birthday>
+    <post>Honorary Knight</post>
+    <vision>None</vision>
+    <weapon>Sword</weapon>
+    <description>Looking for my missing brother.</description>
+    <namepic>none</namepic>
+</id>
+
+<id id="12" email="ether@monstadt.tw" password="Lum1neMissU" rank="1">
+    <name>Ether</name>
+    <sex>Male</sex>
+    <birthday>September 7th</birthday>
+    <post>Honorary Knight</post>
+    <vision>None</vision>
+    <weapon>Sword</weapon>
+    <description> Looking for my missing sister.</description>
+    <namepic>none</namepic>
+</id>
+
+
+
+<id id="13" email="diluc@monstadt.tw" password="MidN1ghtHero" rank="0">
+
+<name surname="Ragnvindr">Diluc</name>
+    <sex>Male</sex>
+    <birthday>April 30th</birthday>
+    <post>off state</post>
+    <vision>Pyro</vision>
+    <weapon>Claymore</weapon>
+    <description> </description>
+    <namepic>Diluc.png</namepic></id>
+
+</knights>

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Account</title>
+    <meta charset="utf-8">
+{% endblock %}
+
+{% block content %}
+<div class="header_links">
+    <p align="right">
+        <a rel="stylesheet" href="{{ url_for('home_log', login=login) }}">Home</a>
+        <a rel="stylesheet" href="{{ url_for('log_in') }}">Log Out</a>
+    </p>
+</div>
+
+<div class="profile">
+    <div class="profile_greet">
+        {% if sex == 'Male' %}
+        <h2 align="center">Welcome, master {{ name }}! </h2>
+        {% elif sex == 'Female' %}
+        <h2 align="center">Welcome, mistress {{ name }}! </h2>
+        {% else %}
+        <h2 align="center">Welcome, knight {{ name }}! </h2>
+        {% endif %}
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div class="profile_img">
+                    <p><img src="{{ url_for('static', filename=namepic) }}" alt="Image missed"></p>
+                    <p align="center"><img src="{{ url_for('static', filename=visionpic) }}" alt="Image missed"></p>
+                </div>
+            </td>
+            <td>
+                <div class="profile_info">
+                    <p>Name: {{ name }} {{ surname }}</p>
+                    <p>Birthday: {{ birthday }}</p>
+                    <p>Post: {{ post }}</p>
+                    <p>Vision: {{ vision }}</p>
+                    <p>Weapon: {{ weapon }}</p>
+                    <p>About: "{{ about }}"</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+    <div class="profile_actions">
+        <a rel="stylesheet" href="{{ url_for('missions', login=login) }}">Check commissions</a>
+    </div>
+
+
+{% endblock %}
