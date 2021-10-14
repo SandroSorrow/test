@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="header">
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('home') }}">Home</a>
+    </div>
+</div>
+
+<div class="notification">
+    <div class="notify_alert">{{ title }}</div>
+    <div class="notify_message">{{ notification }}</div>
+
+    {% if back %}
+        <div class="links">
+            <a rel="stylesheet" href="{{ url_for(back, login=login, status=status) }}">Back</a>
+        </div>
+    {% endif %}
+
+</div>
+{% if botlinks %}
+{% for link in botlinks %}
+<p align="right"><a rel="stylesheet" href="{{ url_for(link) }}">{{ botlinks[link] }}</a></p>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

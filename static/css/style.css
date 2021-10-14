@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700,900&subset=cyrillic");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i&subset=cyrillic');
+
+
+body {
+    margin: 0px;
+    padding: 15px;
+    background-color: #00c4ff;
+    background-image: url("../img/background_1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.home_greet {
+    margin: 50px;
+    text-align: center;
+    font-size: 36pt;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: darkblue;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    padding: 6px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.links a {
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16pt;
+    color: darkblue;
+    text-decoration: none;
+}
+
+.links:hover {
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.profile_greet {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: darkblue;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    background-color: rgba(255, 255, 255, 50%);
+
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: darkblue;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.profile_left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column nowrap;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 10%);
+}
+
+.profile_user_img {}
+
+.profile_vision_img {}
+
+.profile_info {
+    margin: 20px;
+    padding: 15px;
+}
+
+.field_name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.form_bottom {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: darkblue;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 0;
+    padding-bottom: 20px;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(255, 255, 255, 50%);
+    }
+
+.form_ {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.form_row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: darkblue;
+    text-decoration: none;
+}
+
+.description_field {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: darkblue;
+    text-decoration: none;
+}
+
+.form_cell {
+    width: 110px
+}
+
+.form_date {
+    width: 110px
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.submit_button {
+    margin: 20px 45%;
+}
+
+.missions_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    width: 1000px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 50%);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: darkblue;
+}
+
+.missions_task {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px auto;
+    padding: 20px;
+    width: 1000px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 50%);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: darkblue;
+}
+
+.incident_id {
+    text-align: center;
+    width: 100%;
+}
+
+.mission_support {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 0, 50%);
+}
+
+.mission_complete {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: rgba(0, 255, 0, 50%);
+}
+
+.task_message {
+    width: 400px;
+    margin: 20px;
+    padding: 10px;
+}
+.task_message:hover {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.task_report {
+    width: 400px;
+    margin: 20px;
+    padding: 10px;
+}
+.task_report:hover {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 50%);
+}
+
+.empty_report {
+    width: 400px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.send_report {
+    text-align: center;
+    width: 100%;
+}
+
+.notification {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 50%);
+    color: darkblue;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px
+}
+
+.error_alert {
+    margin: 10px;
+    padding: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    color: red;
+}
+
+.notify_alert {
+    margin: 10px;
+    padding: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    color: darkblue;
+}
+
+.notify_message {
+    margin: 10px;
+    padding: 4px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: darkblue;
+}

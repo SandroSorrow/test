@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Home</title>
+    <meta charset="utf-8">
+
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    {% if login %}
+    <div class="links">
+        <a href="{{ url_for('account', login=login) }}">Profile</a>
+    </div>
+    <div class="links">
+        <a href="{{ url_for('log_in') }}">Log Out</a>
+    </div>
+    {% else %}
+    <div class="links">
+        <a href="{{ url_for('log_in') }}">Log In</a>
+    </div>
+    {% endif %}
+</div>
+
+<div class="home_greet">Hello, Monstadt!</div>
+
+{% endblock %}

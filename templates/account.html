@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Account</title>
+    <meta charset="utf-8">
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('home_log', login=login) }}">Home</a>
+    </div>
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('message', login=login) }}">Messages</a>
+    </div>
+    {% if rank == '1' %}
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('missions', login=login) }}">Commissions</a>
+    </div>
+    {% endif %}
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('edit_account', login=login) }}">Edit</a>
+    </div>
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('log_in') }}">Log Out</a>
+    </div>
+</div>
+
+<div class="profile_greet">
+    {% if sex == 'Male' %}
+    Welcome, master {{ name }}!
+    {% elif sex == 'Female' %}
+    Welcome, mistress {{ name }}!
+    {% elif rank == '0' %}
+    Welcome, {{ name }}!
+    {% endif %}
+</div>
+
+<div class="profile">
+    <div class="profile_left">
+        <div class="profile_user_img">
+            <img src="{{ url_for('static', filename=namepic) }}" alt="Image missed">
+        </div>
+
+        <div class="profile_vision_img">
+            <img src="{{ url_for('static', filename=visionpic) }}" alt="Image missed">
+        </div>
+    </div>
+    <div class="profile_info">
+        <p><span class="field_name">Name:</span> {{ name }} {{ surname }}</p>
+        <p><span class="field_name">Birthday:</span> {{ birthday }}</p>
+        <p><span class="field_name">Post:</span> {{ post }}</p>
+        <p><span class="field_name">Vision:</span> {{ vision }}</p>
+        <p><span class="field_name">Weapon:</span> {{ weapon }}</p>
+        <p><span class="field_name">About:</span> {{ about }}</p>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    {% if login %}
+    <div class="links">
+        <a href="{{ url_for('account', login=login) }}">Profile</a>
+    </div>
+    <div class="links">
+        <a href="{{ url_for('log_in') }}">Log Out</a>
+    </div>
+    {% else %}
+    <div class="links">
+        <a href="{{ url_for('log_in') }}">Log In</a>
+    </div>
+    {% endif %}
+</div>
+
+<div class="profile_greet">
+    <p>Edit your profile.</p>
+</div>
+
+<section class="form">
+    <form action="" method="post">
+        {{ form.csrf_token() }}
+        <div class="form_">
+            <div class="form_row">
+                <div class="form_cell">{{ form.name.label() }}</div>
+                <div class="form_cell">{{ form.name }}</div>
+                {% for error in form.name.errors %}
+                <div class="form_cell">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form_row">
+                <div class="form_cell">{{ form.surname.label() }}</div>
+                <div class="form_cell">{{ form.surname }}</div>
+                {% for error in form.surname.errors %}
+                <span class="form_error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form_row">
+                <div class="form_cell">{{ form.sex.label() }}</div>
+                <div class="form_cell">{{ form.sex }}</div>
+            </div>
+            <div class="form_row">
+                <div class="form_cell">Birthday*: </div>
+                <div class="form_date">
+                   <span class="date">{{ form.month }}</span> <span class="date">{{ form.day }}</span>
+                {% for error in form.day.errors %}
+                <span class="form_error">{{ error }}</span>
+                {% endfor %}
+                </div>
+            </div>
+            {% if rank == '1' %}
+            <div class="form_row">
+                <div class="form_cell">{{ form.post.label() }}</div>
+                <div class="form_cell">{{ form.post }}</div>
+                {% for error in form.post.errors %}
+                <span class="form_error">{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="form_row">
+                <div class="form_cell">{{ form.vision.label() }}</div>
+                <div class="form_cell">{{ form.vision }}</div>
+            </div>
+            <div class="form_row">
+                <div class="form_cell">{{ form.weapon.label() }}</div>
+                <div class="form_cell">{{ form.weapon }}</div>
+            </div>
+            <div class="description_field">
+                <span class="form_cell">{{ form.description.label() }}</span>
+                <span class="form_cell">{{ form.description }}</span>
+            </div>
+
+        </div>
+        <div class="submit_button">{{ form.submit() }}</div>
+    </form>
+</section>
+
+{% endblock %}

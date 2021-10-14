@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="header">
+
+    {% if login %}
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('home_log', login=login) }}">Home</a>
+    </div>
+    <div class="links">
+        <a href="{{ url_for('account', login=login) }}">Profile</a>
+    </div>
+    <div class="links">
+        <a href="{{ url_for('log_in') }}">Log Out</a>
+    </div>
+    {% else %}
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('home') }}">Home</a>
+    </div>
+        {% if title != "Log In" %}
+        <div class="links">
+            <a href="{{ url_for('log_in') }}">Log In</a>
+        </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+
+
+<div class="profile_greet">
+    <h3>{{ desc_h3 }}</h3>
+    {% for string in desc_h3p %}
+    <p>{{ string }}</p>
+    {% endfor %}
+    {% if top_message %}
+    <p>{{ top_message }}</p>
+    {% endif %}
+</div>
+<section class="form">
+    <form action="" method="post">
+        {{ form.csrf_token() }}
+        <div class="form_">
+        {% for field in form if field.name != "csrf_token" and field.name != "submit" %}
+            <div class="form_row">
+                <div class="form_cell">{{ field.label() }}</div>
+                <div class="form_cell">{{ field }}</div>
+                {% for error in field.errors %}
+                <div class="form_cell">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+    <div class="submit_button">{{ form.submit() }}</div>
+
+    </form>
+</section>
+
+<section class="form_bottom">
+{% if bot_message %}
+<p>{{ bot_message }}</p>
+{% endif %}
+
+{% if botlinks %}
+<div>
+{% for link in botlinks %}
+{{ botlinks[link][0] }}
+<a href="{{ url_for(link) }}">{{ botlinks[link][1] }}</a>
+{% endfor %}
+</div>
+{% endif %}
+</section>
+
+
+{% endblock %}

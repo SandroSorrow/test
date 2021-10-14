@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>ERROR</title>
+    <meta charset="utf-8">
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('home') }}">Home</a>
+    </div>
+</div>
+
+<div class="notification">
+    <div class="error_alert">ERROR</div>
+    <div class="notify_message">{{ message }}</div>
+
+    {% if back %}
+        <div class="links">
+            <a rel="stylesheet" href="{{ url_for(back, login=login, status=status) }}">Back</a>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="header">
+    <div class="links">
+        <a href="{{ url_for('home') }}">Home</a>
+    </div>
+    <div class="links">
+        <a href="{{ url_for(backlink, login=login, status=status) }}">Back</a>
+    </div>
+</div>
+
+<div class="missions_header">
+<h3 align="center">{{ desc_h3 }} ({{ mission|length() }})</h3>
+{% for string in desc_h3p %}
+<p align="center">{{ string }}</p>
+{% endfor %}
+{% if top_message %}
+<p align="center">{{ top_message }}</p>
+{% endif %}
+</div>
+
+{% for key in mission if key != '0' %}
+<div class="missions_task">
+
+    <h3 class="incident_id">Incident ID: {{ key }}</h3>
+
+    <div class="task_message">
+        <p>Current status: {{ mission[key][0] }}</p>
+        <p>Date: {{ mission[key][2][0] }} </p>
+        <p>Place: {{ mission[key][2][1] }} ({{ mission[key][1] }})</p>
+        <p>From {{ mission[key][2][2] }}: {{ mission[key][2][3] }}</p>
+    </div>
+
+    {% if mission[key][0] == 'Complete' or mission[key][0] == 'Need support' %}
+
+        <div class="task_report">
+            <p>Mission report: </p>
+            <p>Date: {{ mission[key][3][0] }}</p>
+            <p>From {{ mission[key][3][1] }}: {{ mission[key][3][2] }}</p>
+                {% if mission[key][0] == 'Need support' %}
+                <h4 class="mission_support">Need support!</h4>
+                {% elif mission[key][0] == 'Complete' %}
+                <h4 class="mission_complete">Mission complete.</h4>
+                {% endif %}
+        </div>
+    {% else %}
+        <div class="empty_report"></div>
+    {% endif %}
+
+    {% if mission[key][0] != 'Complete' %}
+        <div class="send_report">
+            Send <a href="{{ url_for('reports', login=login, status=status, inc_id=key) }}">report</a>.
+        </div>
+    {% endif %}
+
+
+
+
+</div>
+{% endfor %}
+
+<h4 align="center">{{ notification }}</h4>
+
+{% if bot_message %}
+<p align="center">{{ bot_message }}</p>
+{% endif %}
+
+{% if botlinks %}
+{% for link in botlinks %}
+<p align="right"><a href="{{ url_for(link) }}">{{ botlinks[link] }}</a></p>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
