@@ -17,7 +17,7 @@
     <div class="links">
         <a rel="stylesheet" href="{{ url_for('missions', login=login) }}">Commissions</a>
     </div>
-    {% elif rank = '0' %}
+    {% elif rank = '0' or rank == '1' %}
     <div class="links">
         <a rel="stylesheet" href="{{ url_for('incident', login=login) }}">New incident</a>
     </div>
