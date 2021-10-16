@@ -298,7 +298,7 @@ def check(login, id_):
                            login=login,
                            title="Status",
                            notification=notification,
-                           back='home')
+                           back='check_incident')
 
 
 @app.route('/account/id<login>/missions', methods=['get', 'post'])
