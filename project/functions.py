@@ -128,7 +128,7 @@ def check(id_, file='incidents.xml'):
     n = -1
     id_ = int(id_)
     for ids in root:
-        n = int(ids.text)
+        n = int(ids.attrib['id'])
     if id_ > n:
         status_ = 'ID does not exist.'
         return status_
@@ -236,43 +236,55 @@ def account(login, file='knights.xml'):
     return profile
 
 
-# print(' '.join(my_time()))
-# print(registration('Ether@monstadt.tw', 'Lum1ne'))
-# profile = {'name': 'Lumine',
-#            'surname': '',
-#            'sex': 'Female',
-#            'birthday': 'September 7th',
-#            'post': 'Honorary Knight',
-#            'vision': 'None',
-#            'weapon': 'Sword',
-#            'description': ''}
-
-# new_account(12, profile)
+def get_rank(login, file='knights.xml'):
+    tree = ElementTree.parse(file)
+    knights = tree.getroot()
+    rank = '0'
+    for ids in knights:
+        if ids.attrib['id'] == str(login):
+            rank = ids.attrib['rank']
+    return rank
 
 
-# print(task(5, 'Monstadt', 'Fischl', 'Strange anomaly in Cape Oath'))
-# print()
-# print(report(2, 2, 3, 'Enemies number is 8. Need support.'))
-#
-# m = missions('2')
-#
-# for i in m:
-#     print('{' + i + ': ', m[i], '}', sep='')
+if __name__ == '__main__':
+    aaa = 'Cyberpunk 2077'
+    # print(' '.join(my_time()))
+    # print(registration('Ether@monstadt.tw', 'Lum1ne'))
+    # profile = {'name': 'Lumine',
+    #            'surname': '',
+    #            'sex': 'Female',
+    #            'birthday': 'September 7th',
+    #            'post': 'Honorary Knight',
+    #            'vision': 'None',
+    #            'weapon': 'Sword',
+    #            'description': ''}
 
-# def avatar():
-#     tree = ElementTree.parse('knights.xml')
-#     root = tree.getroot()
-#
-#     for ids in root:
-#         name = ids[0].text
-#         print(name)
-#         namepic_tag = ElementTree.SubElement(ids, 'namepic')
-#         namepic_tag.text = str(name + '.png')
-#         print(namepic_tag.text)
-#
-#         tree.write('knights.xml')
-#
-#
-# avatar()
+    # new_account(12, profile)
 
-# print(account(4))
+
+    # print(task(5, 'Monstadt', 'Fischl', 'Strange anomaly in Cape Oath'))
+    # print()
+    # print(report(2, 2, 3, 'Enemies number is 8. Need support.'))
+    #
+    # m = missions('2')
+    #
+    # for i in m:
+    #     print('{' + i + ': ', m[i], '}', sep='')
+
+    # def avatar():
+    #     tree = ElementTree.parse('knights.xml')
+    #     root = tree.getroot()
+    #
+    #     for ids in root:
+    #         name = ids[0].text
+    #         print(name)
+    #         namepic_tag = ElementTree.SubElement(ids, 'namepic')
+    #         namepic_tag.text = str(name + '.png')
+    #         print(namepic_tag.text)
+    #
+    #         tree.write('knights.xml')
+    #
+    #
+    # avatar()
+
+    # print(account(4))

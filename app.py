@@ -149,7 +149,7 @@ def account(login):
                            visionpic=visionpic)
 
 
-@app.route('/account/edit/id<login>', methods=["get", "post"])
+@app.route('/account/id<login>/edit', methods=["get", "post"])
 def edit_account(login):
     file = 'project/knights.xml'
     form_new = NewAccForm()
@@ -182,7 +182,7 @@ def edit_account(login):
                            back='home')
 
 
-@app.route('/message/id<login>', methods=["GET", "POST"])
+@app.route('/account/id<login>/message', methods=["GET", "POST"])
 def message(login):
     heroes = {"jean@monstadt.tw": "Jean",
               "klee@monstadt.tw": "Klee",
@@ -232,8 +232,8 @@ def message(login):
                            )
 
 
-@app.route('/incident', methods=["GET", "POST"])
-def incident():
+@app.route('/account/id<login>/incident', methods=["GET", "POST"])
+def incident(login):
     incident_id = {0: "Commission",
                    1: "Wild animals",
                    2: "Bandits",
@@ -261,6 +261,7 @@ def incident():
                                back='home')
 
     return render_template("forms.html",
+                           login=login,
                            form=form_incident,
                            title="New incident",
                            desc_h3="New incident",
@@ -269,15 +270,16 @@ def incident():
                            )
 
 
-@app.route('/incident/check', methods=["GET", "POST"])
-def check_incident():
+@app.route('/account/id<login>/incident/check', methods=["GET", "POST"])
+def check_incident(login):
     id_ = ''
     form_check = CheckForm()
     if form_check.validate_on_submit():
         id_ = form_check.incident_id.data
-        return redirect(url_for("check", id_=id_))
+        return redirect(url_for("check", id_=id_, login=login,))
 
     return render_template("forms.html",
+                           login=login,
                            id=id_,
                            form=form_check,
                            title="Check incident",
@@ -287,12 +289,13 @@ def check_incident():
                            )
 
 
-@app.route('/incident/check/incident_<id_>')
-def check(id_):
+@app.route('/account/id<login>/incident/check/incident_<id_>')
+def check(login, id_):
     response = functions.check(id_, file='project/incidents.xml')
     print('ID', id_, response)
     notification = 'Commission {} status: {}'.format(id_, response)
     return render_template("notifications.html",
+                           login=login,
                            title="Status",
                            notification=notification,
                            back='home')

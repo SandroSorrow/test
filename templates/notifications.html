@@ -9,9 +9,18 @@
 
 {% block content %}
 <div class="header">
+    {% if login %}
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('home_log', login=login) }}">Home</a>
+    </div>
+    <div class="links">
+        <a rel="stylesheet" href="{{ url_for('account', login=login) }}">Profile</a>
+    </div>
+    {% else %}
     <div class="links">
         <a rel="stylesheet" href="{{ url_for('home') }}">Home</a>
     </div>
+    {% endif %}
 </div>
 
 <div class="notification">
