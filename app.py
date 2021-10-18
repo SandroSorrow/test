@@ -218,7 +218,10 @@ def message(login):
             in_mess.write('To: ' + address + '\n')
             in_mess.write('Message:\n' + str(message) + '\n')
         print("New message received.")
-        sys.stdout.write('New message received.')
+        sys.stdout.write(str(ctime()))
+        sys.stdout.write('From: ' + str(from_name) + ' <' + from_email + '>')
+        sys.stdout.write('To: ' + address)
+        sys.stdout.write('Message:\n' + str(message) + '\n')
         # flash("Ваше сообщение для " + knights[to_name] + " отправлено.")
         notification = 'Your message for {} sent.'.format(to_mail)
         return render_template("notifications.html", login=login,
