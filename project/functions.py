@@ -246,6 +246,25 @@ def get_rank(login, file='knights.xml'):
     return rank
 
 
+def get_email(login, file='knights.xml'):
+    tree = ElementTree.parse(file)
+    knights = tree.getroot()
+    for ids in knights:
+        if ids.attrib['id'] == str(login):
+            email = ids.attrib['email']
+            name = ids[0].text
+            return [email, name]
+
+
+def get_name(email, file='knights.xml'):
+    tree = ElementTree.parse(file)
+    knights = tree.getroot()
+    for ids in knights:
+        if ids.attrib['email'] == str(email):
+            name = ids[0].text
+            return name
+
+
 if __name__ == '__main__':
     aaa = 'Cyberpunk 2077'
     # print(' '.join(my_time()))

@@ -109,10 +109,6 @@ class ReportForm(FlaskForm):
 
 
 class MessageForm(FlaskForm):
-    from_name = StringField("Your name: ",
-                            validators=[DataRequired()])
-    from_email = StringField("Your e-mail: ",
-                          validators=[DataRequired(), Email()])
     # StringField() - поле для однострочного ввода
     # DataRequired() - "обязательное поле"
     to_mail = StringField("To e-mail: ",

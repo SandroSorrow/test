@@ -185,32 +185,18 @@ def edit_account(login):
 
 @app.route('/account/id<login>/message', methods=["GET", "POST"])
 def message(login):
-    heroes = {"jean@monstadt.tw": "Jean",
-              "klee@monstadt.tw": "Klee",
-              "keya@monstadt.tw": "Kaeya",
-              "lisa@monstadt.tw": "Lisa",
-              "amber@monstadt.tw": "Amber",
-              "eula@monstadt.tw": "Eula",
-              "diluc@monstadt.tw": "Diluc",
-              "venti@monstadt.tw": "Venti",
-              "barbara@monstadt.tw": "Barbara",
-              "rosaria@monstadt.tw": "Rosaria",
-              "diona-meow@monstadt.tw": "Diona",
-              "bennet@monstadt.tw": "Bennet",
-              "noelle@monstadt.tw": "Noelle",
-              "nona_nagistus@monstadt.tw": "Mona",
-              "sucrose@monstadt.tw": "Sucrose",
-              "albedo@monstadt.tw": "Albedo",
-              }
+    file = 'project/knights.xml'
+    from_ = functions.get_email(login, file)
+    from_email = from_[0]
+    from_name = from_[1]
     form_message = MessageForm()
     if form_message.validate_on_submit():
-        from_name = form_message.from_name.data
-        from_email = form_message.from_email.data
         to_mail = form_message.to_mail.data
+        to_name = functions.get_name(to_mail, file)
         message = form_message.message.data
         with open('logs/citizen_messages.txt', 'a', encoding='utf-8') as in_mess:
-            if to_mail in heroes:
-                address = heroes[to_mail] + ' <' + to_mail + '>'
+            if to_name:
+                address = to_name + ' <' + to_mail + '>'
             else:
                 address = to_mail
             in_mess.write('\n' + str(ctime()) + '\n')
@@ -218,10 +204,10 @@ def message(login):
             in_mess.write('To: ' + address + '\n')
             in_mess.write('Message:\n' + str(message) + '\n')
         print("New message received.")
-        sys.stdout.write(str(ctime()))
-        sys.stdout.write('From: ' + str(from_name) + ' <' + from_email + '>')
-        sys.stdout.write('To: ' + address)
-        sys.stdout.write('Message:\n' + str(message) + '\n')
+        sys.stdout.write('\n' + str(ctime()) + '\n')
+        sys.stdout.write('From: ' + str(from_name) + ' <' + from_email + '>\n')
+        sys.stdout.write('To: ' + address + '\n')
+        sys.stdout.write('Message:\n' + str(message) + '\n\n')
         # flash("Ваше сообщение для " + knights[to_name] + " отправлено.")
         notification = 'Your message for {} sent.'.format(to_mail)
         return render_template("notifications.html", login=login,
