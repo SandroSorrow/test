@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash
 
+import sys
 from project import form, functions
 from project.form import *
 from time import ctime
@@ -217,6 +218,7 @@ def message(login):
             in_mess.write('To: ' + address + '\n')
             in_mess.write('Message:\n' + str(message) + '\n')
         print("New message received.")
+        sys.stdout.write('New message received.')
         # flash("Ваше сообщение для " + knights[to_name] + " отправлено.")
         notification = 'Your message for {} sent.'.format(to_mail)
         return render_template("notifications.html", login=login,
